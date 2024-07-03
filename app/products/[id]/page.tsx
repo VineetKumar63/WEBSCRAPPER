@@ -1,12 +1,12 @@
-import HeroCarousel from "@/components/HeroCarousel"
-import Searchbar from "@/components/Searchbar"
+
 import Image from "next/image"
-import { getAllProducts, getProductById, getSimilarProducts } from "@/lib/actions"
+import { getProductById, getSimilarProducts } from "@/lib/actions"
 import { redirect } from "next/navigation"
 import Link from "next/link"
 import PriceInfoCard from "@/components/PriceInfoCard"
 import ProductCard from "@/components/ProductCard"
 import { formatNumber } from "@/lib/utils"
+import Modal from "@/components/Modal"
 
 type Props = {
     params: { id: string }
@@ -14,7 +14,6 @@ type Props = {
 
 const ProductDetails = async ({params: {id}}: Props) => {
     const product = await getProductById(id);
-  const allProducts = await getAllProducts();
   if(!product) redirect('/')
 
     const similarProducts = await getSimilarProducts(id);

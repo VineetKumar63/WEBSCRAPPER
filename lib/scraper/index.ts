@@ -1,4 +1,4 @@
-import { rejects } from "assert";
+"use server"
 import axios from "axios";
 import * as cheerio from 'cheerio';
 import { extractCurrency, extractDescription, extractPrice } from "../utils";
@@ -44,6 +44,7 @@ export async function scrapeAmzonProduct(url:string) {
           const currency = extractCurrency($('.a-price-symbol'))
           const discountRate = $('.savingsPercentage').text().replace(/[-%]/g, "");
           const description = extractDescription($)
+          
           const data = {
             url,
             currency: currency || 'र',

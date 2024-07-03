@@ -10,8 +10,7 @@ const Home = async () => {
   return (
     <>
    <section className='px-6 md:px-20 py-24 border-2 border-red-500'>
-    <div className="flex flex-col justify-center
-    ">
+    <div className="flex flex-col justify-center">
       <p className='small-text'>
         Smart shopping Starts here
         <Image src='/assets/icons/arrow-right.svg' alt='search' width={16} height={16}/>
